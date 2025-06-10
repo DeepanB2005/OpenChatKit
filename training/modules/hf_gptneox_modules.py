@@ -59,26 +59,7 @@ try:
             assert cu_seqlens is None
             assert max_s is None
 
-            output = fav2_qkvpacked_func(
-                qkv, self.dropout_p if self.training else 0.0, 
-                softmax_scale=self.softmax_scale, causal=causal
-            )
-    
-            return output, None
-except ImportError:
-    flash_attn_v2_installed = False
-
-    
-
-def rotate_half(x):
-    """Rotates half the hidden dims of the input."""
-    x1 = x[..., : x.shape[-1] // 2]
-    x2 = x[..., x.shape[-1] // 2 :]
-    return torch.cat((-x2, x1), dim=-1)
-
-
-def apply_rotary_pos_emb(q, k, cos, sin, offset=0):
-    if isinstance(offset, torch.Tensor):
+          
         realidx = torch.arange(q.shape[-2], device=q.device).view(
             1, q.shape[-2]) + offset[:, None]
         cos = cos.squeeze(0).squeeze(0)[realidx].view(offset.size(0),
