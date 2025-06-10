@@ -16,7 +16,7 @@ from transformers.models.gptj.modeling_gptj import GPTJBlock as _GPTJBlock
 from transformers.models.gptj.modeling_gptj import GPTJModel as _GPTJModel
 from transformers.models.gptj.modeling_gptj import fixed_pos_embedding
 from transformers.models.gptj.configuration_gptj import GPTJConfig as GPTConfig
-from transformers.models.gptj.modeling_gptj import fixed_pos_embedding, rotate_every_two, apply_rotary_pos_emb
+from transformers.models.gptj.modeling_gptj import fixed_pos_embedding, rotate_every_two, apply_rotary_pos
 
 
 # @torch.jit.script
