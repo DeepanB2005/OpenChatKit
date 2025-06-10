@@ -1,6 +1,4 @@
-DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
-
-netif=lo
+DIR=$(cd -- "$( dirname -- "${BASH_SOffbsdhbfjlkwg
 export GLOO_SOCKET_IFNAME=${netif}
 export NCCL_SOCKET_IFNAME=${netif}
 export MODEL_NAME=llama-2-7b-32k-mqa
