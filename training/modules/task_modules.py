@@ -12,5 +12,4 @@ class GlueClassification(torch.nn.Module):
     def forward(self, hidden_states, pooler_index=0):
         pooled = hidden_states[:, pooler_index, :]
         pooled = self.pooler_layer(pooled)
-        pooled = torch.tanh(pooled)
-        return self.fc_layer(pooled)
+        pooled = torch.tanh
