@@ -16,8 +16,7 @@ In this doc, you'll find steps for:
 - [Pretrained Base Model](#pretrained-base-model)
 - [Training and Finetuning](#training-and-finetuning)
   * [(Optional) 8bit Adam](#optional-8bit-adam)
-  * [Train GPT-NeoX-Chat-Base-20B](#train-gpt-neox-chat-base-20b)
-- [Converting Weights to Huggingface Format](#converting-weights-to-huggingface-format)
+  * [Train GPT-NeoX-Chat-Base-20B](#train-gpt-neox-chat-base-20b
 - [Inference](#inference)
 - [Monitoring](#monitoring)
   * [Loguru](#loguru)
