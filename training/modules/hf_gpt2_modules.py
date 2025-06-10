@@ -15,8 +15,7 @@ from transformers.models.gpt2.modeling_gpt2 import GPT2Model as _GPT2Model
 from transformers.models.gpt2.modeling_gpt2 import GPT2LMHeadModel as _GPT2LMHeadModel
 from transformers.models.gpt2.modeling_gpt2 import GPT2ForSequenceClassification as _GPT2ForSequenceClassification
 from transformers.models.gpt2.configuration_gpt2 import GPT2Config as GPTConfig
-from typing import Optional, Tuple, Union
-
+from typing import Optional, Tuple, U
 
 # @torch.jit.script
 def gpt_loss_func(input, target):
