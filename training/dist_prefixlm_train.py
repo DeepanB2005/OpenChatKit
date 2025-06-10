@@ -226,24 +226,7 @@ def main():
     parser.add_argument('--evaluation-data',
                         type=str, default=None, help="path of eval data in jsonl")
     parser.add_argument('--evaluation-num-batch',
-                        type=int, default=None, help="for debug purpose, only eval the first several batch.")
-    parser.add_argument('--checkpoint-steps', 
-                        type=int, default=0, metavar='S',
-                        help='every x steps, save checkpoint. (0 means do not save checkpoint)')
-    parser.add_argument('--net-interface', 
-                        type=str, default='lo', metavar='S',
-                        help='net_interface')
-    parser.add_argument('--job-id', 
-                        type=str, default="0", metavar='S',
-                        help='an uuid')
-    args = parser.parse_args()
-    
-    torch.manual_seed(args.seed)
-    random.seed(args.seed)
-    np.random.seed(args.seed)
-    
-    if args.use_cuda:
-        assert (torch.cuda.is_available())
+                        type=
         device = torch.device('cuda', args.cuda_id)
     else:
         device = torch.device('cpu')
