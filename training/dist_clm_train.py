@@ -18,8 +18,7 @@ from utils.logging_utils import *
 from utils.event_report import *
 from comm.comm_utils import *
 
-from utils.upload_manager import *
-
+from utils.upload_manager imp
 
 def test_loop(args, pipe, device, test_data_loader):
     
