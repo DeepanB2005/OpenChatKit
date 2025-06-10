@@ -6,26 +6,7 @@ chat data from the OIG dataset. You can adapt this tutorial to fine-tune with yo
 
 In order to fine-tune the RedPajama 3B models, please follow these steps:
 
-First clone the OpenChatKit repo:
-
-```shell
-git clone git@github.com:togethercomputer/OpenChatKit.git
-```
-
-Next install dependencies as instructed by the OpenChatKit repo.
-
-# Prepare Weights
-
-```shell
-python pretrained/RedPajama-3B/prepare.py
-```
-
-This script will download the weight from HuggingFace and prepare it for finetuning. The prepared weights will be saved at 
-
-```
-pretrained/RedPajama-3B/togethercomputer_RedPajama-INCITE-Chat-3B-v1
-```
-
+First clone the OpenCha
 # Prepare Fine Tuning Data
 
 We now need to preapre the training data.  We provide an example script that downloads a small slice of data from OIG. 
