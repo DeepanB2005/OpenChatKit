@@ -7,23 +7,6 @@ from fairscale.nn.checkpoint import checkpoint_wrapper
 
 # This is only implemented to support checkpoint in FSDP
 
-class GPTTransformerFsdpLayer(torch.nn.Module):
-    def __init__(self, model_dim, head_num, feedforward_dim=2048, layer_norm_eps=1e-5, use_checkpoint=True,
-                 explicit_fsdp=False) -> None:
-        super(GPTTransformerFsdpLayer, self).__init__()
-        self.attn = MultiHeadAttention(model_dim, head_num)
-        if use_checkpoint:
-            self.attn = checkpoint_wrapper(self.attn)
-        if explicit_fsdp:
-            self.attn = FSDP(self.attn, reshard_after_forward=True, move_params_to_cpu=False, mixed_precision=False,
-                             flatten_parameters=False)
-        # Implementation of Feedforward model
-        self.mlp = TwoLayerMLP(model_dim, feedforward_dim)
-        if use_checkpoint:
-            self.mlp = checkpoint_wrapper(self.mlp)
-        if explicit_fsdp:
-            self.attn = FSDP(self.attn, reshard_after_forward=True, move_params_to_cpu=False, mixed_precision=False,
-                             flatten_parameters=False)
         self.norm1 = torch.nn.LayerNorm(model_dim, eps=layer_norm_eps)
         self.norm2 = torch.nn.LayerNorm(model_dim, eps=layer_norm_eps)
         # self.dropout1 = nn.Dropout(dropout)
